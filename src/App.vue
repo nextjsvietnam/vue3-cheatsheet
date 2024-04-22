@@ -1,28 +1,22 @@
 <script setup lang="ts">
 import HelloWorld from "./components/HelloWorld.vue";
+import environment from "./configs/environment";
 </script>
 
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
+    <h1 class="text-3xl font-bold">{{ environment.APP_NAME }}</h1>
+    <a href="/" target="_blank">
       <img src="./assets/s-logo.png" class="logo" alt="Vite logo" />
     </a>
-    <a href="https://vuejs.org/" target="_blank"> </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <footer>
+    <p>
+      Copyright @ {{ environment.APP_NAME }} - version:
+      {{ environment.APP_VERSION }} ({{ environment.MODE }})
+    </p>
+  </footer>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style scoped></style>
